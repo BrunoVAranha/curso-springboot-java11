@@ -1,5 +1,7 @@
 package com.educandoweb.course.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.HashSet;
@@ -78,6 +80,7 @@ public class Product implements Serializable {
         this.imgUrl = imgUrl;
     }
 
+    @JsonIgnore
     public Set<Category> getCategories() {
         return categories;
     }

@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.Instant;
+import java.util.Set;
 
 @Entity
 @Table(name = "tb_order")
@@ -23,6 +24,9 @@ public class Order implements Serializable {
     private User client;
 
     private Integer orderStatus;
+
+    @OneToMany(mappedBy = "id.order")
+    private Set<OrderItem> orderItems;
 
     public Order(){
 
@@ -65,5 +69,9 @@ public class Order implements Serializable {
 
     public void setOrderStatus(OrderStatus orderStatus) {
         this.orderStatus = orderStatus.getCode();
+    }
+
+    public Set<OrderItem> getOrderItems() {
+        return orderItems;
     }
 }

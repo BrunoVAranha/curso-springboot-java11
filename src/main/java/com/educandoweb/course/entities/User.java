@@ -1,5 +1,6 @@
 package com.educandoweb.course.entities;
 
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
@@ -23,7 +24,6 @@ public class User implements Serializable {
 
     private String password;
 
-    @JsonIgnore
     @OneToMany(mappedBy = "client")
     private List<Order> orders = new ArrayList<>();
 
@@ -79,6 +79,7 @@ public class User implements Serializable {
         this.password = password;
     }
 
+    @JsonIgnore
     public List<Order> getOrders() {
         return orders;
     }
