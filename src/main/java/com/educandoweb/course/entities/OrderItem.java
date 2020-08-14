@@ -2,6 +2,7 @@ package com.educandoweb.course.entities;
 
 import com.educandoweb.course.entities.PK.OrderItemPk;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
