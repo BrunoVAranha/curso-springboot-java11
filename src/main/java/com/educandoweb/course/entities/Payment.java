@@ -1,5 +1,7 @@
 package com.educandoweb.course.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.Instant;
@@ -45,6 +47,7 @@ public class Payment implements Serializable {
         this.moment = moment;
     }
 
+    @JsonIgnore
     public Order getOrder() {
         return order;
     }
